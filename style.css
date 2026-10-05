@@ -258,9 +258,9 @@ p,li{text-wrap:pretty}
 
 /* ---------- Áreas de práctica ---------- */
 .areas{display:grid;gap:1.25rem}
-.areas__tabs{display:flex;gap:.6rem;margin-inline:calc(var(--gutter) * -1);padding:.25rem var(--gutter) .75rem;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none}
-.areas__tabs::-webkit-scrollbar{display:none}
-.tab{flex:none;display:inline-flex;align-items:center;gap:.6rem;padding:.8rem 1.15rem;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-weight:500;color:var(--text);scroll-snap-align:center;transition:background-color .35s,color .35s,border-color .35s,box-shadow .5s var(--ease),transform .5s var(--ease)}
+/* Celular: las ocho materias en filas visibles a la vez, sin deslizar */
+.areas__tabs{display:flex;flex-wrap:wrap;gap:.5rem;padding:.25rem 0 .5rem}
+.tab{flex:none;display:inline-flex;align-items:center;gap:.5rem;padding:.65rem 1rem;border-radius:var(--r-pill);border:1px solid var(--line);background:#fff;font-weight:500;color:var(--text);transition:background-color .35s,color .35s,border-color .35s,box-shadow .5s var(--ease),transform .5s var(--ease)}
 .tab__label{display:inline-flex;align-items:center;gap:.6rem}
 .tab__ico{display:grid;place-items:center;color:var(--brand);transition:color .35s,background-color .35s}
 .tab__arrow{display:none}
@@ -470,7 +470,7 @@ textarea.input{min-height:8.5rem;resize:vertical}
   .about__media{margin-bottom:2.6rem}
 
   .areas{grid-template-columns:minmax(0,.85fr) minmax(0,1.4fr);gap:2.5rem;align-items:start}
-  .areas__tabs{flex-direction:column;gap:.35rem;margin:0;padding:0;overflow:visible}
+  .areas__tabs{flex-direction:column;flex-wrap:nowrap;gap:.35rem;margin:0;padding:0;overflow:visible}
   .tab{justify-content:space-between;width:100%;padding:1rem 1.15rem;border-color:transparent;border-radius:var(--r-md);background:transparent;font-family:var(--font-display);font-size:1.65rem;font-weight:600;line-height:1}
   .tab__ico{width:2.8rem;height:2.8rem;border-radius:var(--r-sm);background:var(--brand-soft);font-size:1.3rem}
   .tab__label{gap:1rem}
