@@ -173,7 +173,7 @@
   const initRotator = () => {
     const rot = $('#rotator');
     const hero = $('.hero');
-    if (!rot || !hero || reduceMotion.matches) return;
+    if (!rot || !hero) return; // rota tambien con "reducir movimiento": ahi el cambio es directo, sin deslizamiento
 
     const words = (rot.dataset.words || '').split('|').filter(Boolean);
     const el = rot.firstElementChild;
@@ -186,6 +186,7 @@
 
     const swap = () => {
       index = (index + 1) % words.length;
+      if (reduceMotion.matches) { el.textContent = words[index]; return; }
       el.classList.add('is-out');
       setTimeout(() => {
         el.textContent = words[index];

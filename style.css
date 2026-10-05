@@ -203,6 +203,11 @@ p,li{text-wrap:pretty}
 .rot__w{display:inline-block;transition:transform .75s var(--ease),opacity .5s ease}
 .rot__w.is-out{transform:translateY(-105%);opacity:0}
 .rot__w.is-pre{transform:translateY(105%);opacity:0;transition:none}
+/* Palabra rotatoria llamativa: mas peso, acento brillante y subrayado que se dibuja en cada cambio */
+.rot__w{position:relative;font-weight:700;color:var(--brand-2)}
+.rot__w::after{content:"";position:absolute;left:0;right:0;bottom:-.14em;height:.07em;border-radius:var(--r-pill);background:linear-gradient(90deg,var(--brand),var(--brand-2));transform-origin:left center;transition:transform .9s var(--ease) .2s}
+.rot__w.is-out::after{transform:scaleX(0);transition-duration:.3s;transition-delay:0s}
+.rot__w.is-pre::after{transform:scaleX(0);transition:none}
 .hero__lead{margin-top:1.5rem;max-width:34rem;font-size:clamp(1.05rem,1rem + .35vw,1.25rem);color:var(--text)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
 .hero__cta .btn{flex:1 1 100%}
